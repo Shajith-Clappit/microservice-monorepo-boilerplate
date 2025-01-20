@@ -6,3 +6,13 @@ config:
       - ENABLE_APPS_IMAGES
       - ENABLE_IMAGE_SOURCES
       - "/.*/"
+
+      # This function takes two integers as input and returns their sum.
+      # It performs a simple addition operation and is intended for basic arithmetic calculations.
+      # 
+      # Parameters:
+      # - a (int): The first integer to be added.
+      # - b (int): The second integer to be added.
+      # 
+      # Returns:
+      # - int: The sum of the two input integers.
