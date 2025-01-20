@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-microservice-project
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-microservice-project
+  template:
+    metadata:
+      labels:
+        app: my-microservice-project
+    spec:
+      containers:
+        - name: service1
+          image: {{ .Values.werf.image.service1 }}
+          ports:
+            - containerPort: 80
+        - name: service2
+          image: {{ .Values.werf.image.service2 }}
+          ports:
+            - containerPort: 80
+        - name: static-file-server
+          image: {{ .Values.werf.image.service3 }}
+          ports:
+            - containerPort: 80

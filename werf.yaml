@@ -1,0 +1,17 @@
+configVersion: 1
+project: my-microservice-project
+
+--- 
+image: service1
+dockerfile: Dockerfile
+context: ./microservice-1
+
+---
+image: service2
+dockerfile: Dockerfile
+context: ./microservice-2
+
+---
+image: service3
+dockerfile: Dockerfile
+context: ./static-file-server
