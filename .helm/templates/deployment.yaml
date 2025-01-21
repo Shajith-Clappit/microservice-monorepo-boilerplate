@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: microservice
+  name: microservice1
 spec:
   replicas: 1
   selector:
@@ -17,10 +17,42 @@ spec:
           image: {{ .Values.werf.image.service1 }}
           ports:
             - containerPort: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: microservice2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: microservice
+  template:
+    metadata:
+      labels:
+        app: microservice
+    spec:
+      containers:
         - name: service2
           image: {{ .Values.werf.image.service2 }}
           ports:
             - containerPort: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: microservice3
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: microservice
+  template:
+    metadata:
+      labels:
+        app: microservice
+    spec:
+      containers:
         - name: static-file-server
           image: {{ .Values.werf.image.service3 }}
           ports:
