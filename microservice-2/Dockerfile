@@ -1,6 +1,5 @@
-FROM python:3.8-alpine3.11
+FROM node:13.10-alpine3.11
 WORKDIR /usr/src/app
-COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
-CMD ["python", "app.py"]
+RUN npm install
+CMD ["npm", "start"]
