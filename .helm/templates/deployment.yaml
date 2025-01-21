@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: microservice-monorepo-boilerplate-master-default-dev
+  name: microservice
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: microservice-monorepo-boilerplate-master-default-dev
+      app: microservice
   template:
     metadata:
       labels:
-        app: microservice-monorepo-boilerplate-master-default-dev
+        app: microservice
     spec:
       containers:
         - name: service1
