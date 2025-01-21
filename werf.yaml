@@ -1,5 +1,5 @@
 configVersion: 1
-project: microservice-monorepo-boilerplate-master-default-dev
+project: microservice
 
 --- 
 image: service1
